@@ -1,0 +1,14 @@
+##Zika virus kaggle project notes
+
+What I have managed to find out:
+  - On the data quality level:
+    * There are some duplicated rows, needs to be removed
+    * There are some rows where naming convention is not consistent (Tierra_Del_Fuego vs Tierra_del_Fuego)
+  - While checking linear regression on zikaFilterWide:
+    * The most important variables for prediction were cumulative_probable_imported_cases & cumulative_probable_local_cases
+    * The least important - cumulative_confirmed_imported_cases
+    * It does not make sense to include both cumulative_cases_discarded & cumulative_cases_under_study in the same modelling approach
+  - Looking at the correlation matrix for numeric variables of zikaFilterWide:
+    * It looks like indeed cumulative_confirmed_local_cases is dependent on cumulative_probable_local_cases (~74% correlation)
+    * However cumulative_confirmed_imported_cases is rather NOT dependent on cumulative_probable_imported_cases (~7% corr)
+    * More or less the results are consistent with those from linear regression modelling
