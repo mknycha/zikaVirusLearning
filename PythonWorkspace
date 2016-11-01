@@ -11,6 +11,7 @@ zika.report_date.unique()
 zika.report_date = pd.to_datetime(zika.report_date)#Change date formatting
 zika.location = zika.location.str.lower()
 zika.data_field = zika.data_field.str.lower()
+zika.location_type = zika.location_type.str.lower()
 zika.drop_duplicates(inplace=True)#Dropping duplicated rows
 zika.to_csv('zika_cleared.csv')
 
